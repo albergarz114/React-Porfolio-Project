@@ -198,3 +198,5 @@ Here are some of the elements you may need for the implementation:
 
 ![](screenshots/header_animation.gif)
 
+## Installment 
+1. npm install @chakra-ui/react @emotion/react @emotion/styled framer-motion

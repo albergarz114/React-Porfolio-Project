@@ -3,30 +3,35 @@ import FullScreenSection from "./FullScreenSection";
 import { Box, Heading } from "@chakra-ui/react";
 import Card from "./Card";
 
+
 const projects = [
   {
-    title: "React Space",
+    title: "Little Lemon: A Dockerized Full-Stack Booking Application",
     description:
-      "Handy tool belt to create amazing AR components in a React app, with redux integration via middleware️",
+      "Built with a focus on both aesthetic appeal and technical robustness, this project features a custom-themed React UI and a Python/Django backend. I implemented Docker and CD/CI pipeline",
     getImageSrc: () => require("../images/photo1.jpg"),
+    url: "https://github.com/albergarz114/Capstone-Project",
   },
   {
-    title: "React Infinite Scroll",
+    title: "Shopfy",
     description:
-      "A scrollable bottom sheet with virtualisation support, native animations at 60 FPS and fully implemented in JS land 🔥️",
+      "A shopping list app which user can add, delete, update. Implemented external API and cool visual features. 🔥️",
     getImageSrc: () => require("../images/photo2.jpg"),
+    url: "https://github.com/albergarz114/Shopfy-list",
   },
   {
-    title: "Photo Gallery",
+    title: "Photo Gallery: GlisthrallPhoto",
     description:
-      "A One-stop shop for photographers to share and monetize their photos, allowing them to have a second source of income",
+      "This project is a photo collage application which a user can upload, download, save, or delete a photo.",
     getImageSrc: () => require("../images/photo3.jpg"),
+    url: "https://github.com/albergarz114/GlisthrallPhoto-app",
   },
   {
-    title: "Event planner",
+    title: "World News App",
     description:
-      "A mobile application for leisure seekers to discover unique events and activities in their city with a few taps",
+      "A mobile application for displaying world, local, news. Added local database to save data",
     getImageSrc: () => require("../images/photo4.jpg"),
+    url: "https://github.com/albergarz114/iOS-World-News-App",
   },
 ];
 
@@ -53,6 +58,7 @@ const ProjectsSection = () => {
             title={project.title}
             description={project.description}
             imageSrc={project.getImageSrc()}
+            url={project.url}
           />
         ))}
       </Box>
