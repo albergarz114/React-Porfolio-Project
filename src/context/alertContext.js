@@ -3,6 +3,7 @@ import {createContext, useContext, useState} from "react";
 const AlertContext = createContext(undefined);
 
 export const AlertProvider = ({ children }) => {
+
   const [state, setState] = useState({
     isOpen: false,
     // Type can be either "success" or "error"
@@ -11,12 +12,27 @@ export const AlertProvider = ({ children }) => {
     message: '',
   });
 
+  const [language, setLanguage ] = useState("EN");
+  const toggleLanguage = () => {
+    setLanguage((prev) => (prev === "EN" ? "DE" : "EN"));
+  };
+
+  const [colorMode, setColorMode] = useState(false);
+  
+  const toggleColorMode = () => {
+    setColorMode((prev) => (!prev));
+  };
+
   return (
     <AlertContext.Provider
       value={{
         ...state,
         onOpen: (type, message) => setState({ isOpen: true, type, message }),
         onClose: () => setState({ isOpen: false, type: '', message: '' }),
+        language,
+        toggleLanguage,
+        colorMode,
+        toggleColorMode,
       }}
     >
       {children}

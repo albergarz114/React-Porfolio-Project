@@ -2,14 +2,18 @@ import React from "react";
 import { Avatar, Heading, VStack } from "@chakra-ui/react";
 import FullScreenSection from "./FullScreenSection";
 import profileImage from "../images/Albi.jpg";
+import { useAlertContext } from "../context/alertContext";
 
-const greeting = "Hello, I am Alberto!";
-const bio1 = "A Full-Stack developer";
-const bio2 = "specialised in React, React Native, & Python Backend";
 
-// Implement the UI for the LandingSection component according to the instructions.
-// Use a combination of Avatar, Heading and VStack components.
-const LandingSection = () => (
+const LandingSection = () => {
+
+  const { language } = useAlertContext();
+
+  const greeting = language === "DE" ? "Hallo, Ich bin Alberto!" : "Hello, I am Alberto!";
+  const bio1 = language === "DE" ? "Full-Stack Entwickler" : "A Full-Stack developer";
+  const bio2 = language === "DE" ? "Spezialisiert auf React, React Native und Python Backend" : "specialised in React, React Native, & Python Backend";
+
+  return (
   <FullScreenSection
     justifyContent="center"
     alignItems="center"
@@ -18,8 +22,8 @@ const LandingSection = () => (
   >
     <VStack spacing={16}>
   <Avatar src={profileImage}
-  width = "60"
-  height = ""
+  width = "40"
+  height = "60"
   name='Alberto'
   />
   <Heading as= 'h4' size='md' noOfLiners={1}>{greeting}</Heading>
@@ -28,8 +32,7 @@ const LandingSection = () => (
   <Heading as='h1' size='3x1' noOfLiners={1}>{bio2}</Heading>
   </VStack>
     </VStack>
-
   </FullScreenSection>
-);
-
+  );
+};
 export default LandingSection;

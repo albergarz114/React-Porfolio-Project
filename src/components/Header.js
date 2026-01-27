@@ -1,6 +1,9 @@
-import React, { useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { IconButton, useColorMode } from "@chakra-ui/react";
+import { faSun, faMoon, faLanguage } from "@fortawesome/free-solid-svg-icons";
+import { useAlertContext } from "../context/alertContext";
 import {
   faGithub,
   faLinkedin,
@@ -30,10 +33,15 @@ const socials = [
     icon: faStackOverflow,
     url: "https://stackoverflow.com",
   },
+  
 ];
 
 const Header = () => {
+
   const headerRef = useRef(null); 
+  const { colorMode, toggleColorMode } = useColorMode();
+  const { language, toggleLanguage } = useAlertContext();
+
   useEffect(() => { 
     let prevScrollPos = window.scrollY; 
   
@@ -91,22 +99,39 @@ const Header = () => {
           <nav>
             {/* Add social media links based on the `socials` data */}
             <HStack spacing={8}>
-              {
-                socials.map(social => 
-                <a href={social.url} key={social.url}
-                >
+              {socials.map(social => 
+                <a href={social.url} key={social.url}>
                   <FontAwesomeIcon icon={social.icon} size="2x" />
                 </a>)
               }
+
+              <IconButton
+              aria-label="Toggle theme"
+              variant = "ghost"
+              color="white"
+              _hover={{ bg: "whiteAlpha.200" }}
+              icon={<FontAwesomeIcon icon={colorMode === "light" ? faSun : faMoon} size="lg"/>}
+              onClick={toggleColorMode}
+              />
+              <HStack
+              as="button" 
+              onClick={toggleLanguage} 
+              spacing={2} 
+              cursor="pointer"
+              _hover={{ opacity: 0.8 }}
+              >
+                <FontAwesomeIcon icon={faLanguage} size="lg"/>
+                <Box fontWeight="bold" fontSize="sm">{language}</Box>
+              </HStack>
             </HStack>
           </nav>
           <nav>
             <HStack spacing={8}>
               {/* Add links to Projects and Contact me section */}
               <a href="#projects" onClick={handleClick("projects")}
-              >Projects</a>
+              >{language === "DE" ? "Projekte" : "Projects"}</a>
               <a href="#contactme" onClick={handleClick("contactme")}
-              >Contact Me</a>
+              >{language === "DE" ? "Kontaktieren Sie mich" : "Contact Me"}</a>
             </HStack>
           </nav>
         </HStack>
