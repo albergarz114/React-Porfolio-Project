@@ -32,7 +32,7 @@ const LandingSection = () => {
       comment: ''
     },
     onSubmit: (values) => {
-      submit('https://john.com/contactme', values)
+      submit('http://127.0.0.1:8000/api/confirms/', values)
     },
     validationSchema: Yup.object({
       firstName: Yup.string()
