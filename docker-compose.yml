@@ -1,8 +1,8 @@
 services:
   backend:
-    build: ./Server/myapp
+    build: ./server/myapp
     volumes:
-      - ./Server/myapp:/app
+      - ./server/myapp:/app
     ports:
       - "8000:8000"
     environment:
