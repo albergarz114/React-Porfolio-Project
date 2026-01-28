@@ -61,13 +61,13 @@ const LandingSection = () => {
     >
       <VStack w="1024px" p={32} alignItems="flex-start">
         <Heading as="h1" id="contactme-section">
-        {language === "DE" ? "Kontaktieren Sie mich" : "Contact me"}
+        {language === "ES" ? "Póngase en contacto conmigo" : language === "DE" ? "Kontaktieren Sie mich" : "Contact me"}
         </Heading>
         <Box p={6} rounded="md" w="100%">
           <form onSubmit={formik.handleSubmit}>
             <VStack spacing={4}>
               <FormControl isInvalid={!!formik.errors.firstName && formik.touched.firstName}>
-                <FormLabel htmlFor="firstName">{language === "DE" ? "Name" : "Name"}</FormLabel>
+                <FormLabel htmlFor="firstName">{language === "ES" ? "Nombre" : language === "DE" ? "Name" : "Name"}</FormLabel>
                 <Input
                   id="firstName"
                   name="firstName"
@@ -76,7 +76,7 @@ const LandingSection = () => {
                 <FormErrorMessage>{formik.errors.firstName}</FormErrorMessage>
               </FormControl>
               <FormControl isInvalid={!!formik.errors.email && formik.touched.email}>
-                <FormLabel htmlFor="email">{language === "DE" ? "Email Addresse" : "Email Address"}</FormLabel>
+                <FormLabel htmlFor="email">{language === "ES" ? "Dirección de correo electrónico " : language === "DE" ? "Email Addresse" : "Email Address"}</FormLabel>
                 <Input
                   id="email"
                   name="email"
@@ -86,21 +86,21 @@ const LandingSection = () => {
                 <FormErrorMessage>{formik.errors.email}</FormErrorMessage>
               </FormControl>
               <FormControl>
-                <FormLabel htmlFor="type">{language === "DE" ? "Art der Anfrage" : "Type of enquiry"}</FormLabel>
+                <FormLabel htmlFor="type">{language === "ES" ? "Tipo de consulta" : language === "DE" ? "Art der Anfrage" : "Type of enquiry"}</FormLabel>
                 <Select id="type" name="type"
                 {...formik.getFieldProps('type')}
                 >
-                  <option value="hireMe">{language === "DE" ? "Freiberuflicher Projektvorschlag" : "Freelance project proposal"}</option>
-                  <option value="fullTime">{language === "DE" ? "Vollzeit" : "Full-Time"}</option>
-                  <option value="partTime">{language === "DE" ? "Teilzeit" : "Part-Time"}</option>
+                  <option value="hireMe">{language === "ES" ? "Propuesta de proyecto freelance" : language === "DE" ? "Freiberuflicher Projektvorschlag" : "Freelance project proposal"}</option>
+                  <option value="fullTime">{language === "ES" ? "A tiempo completo" : language === "DE" ? "Vollzeit" : "Full-Time"}</option>
+                  <option value="partTime">{language === "ES" ? "A tiempo parcial" : language === "DE" ? "Teilzeit" : "Part-Time"}</option>
                   <option value="openSource">
-                    {language === "DE" ? "Beratungssitzung zu Open Source" : "Open source consultancy session"}
+                    {language === "ES" ? "Sesión de consultoría sobre código abierto" : language === "DE" ? "Beratungssitzung zu Open Source" : "Open source consultancy session"}
                   </option>
-                  <option value="other">{language === "DE" ? "Sonstiges" : "Other"}</option>
+                  <option value="other">{language === "ES" ? "Otros" : language === "DE" ? "Sonstiges" : "Other"}</option>
                 </Select>
               </FormControl>
               <FormControl isInvalid={!!formik.errors.comment && formik.touched.comment}>
-                <FormLabel htmlFor="comment">{language === "DE" ? "Ihre Nachricht" : "Your message"}</FormLabel>
+                <FormLabel htmlFor="comment">{language === "ES" ? "Tu mensaje" : language === "DE" ? "Ihre Nachricht" : "Your message"}</FormLabel>
                 <Textarea
                   id="comment"
                   name="comment"
@@ -110,7 +110,7 @@ const LandingSection = () => {
                 <FormErrorMessage>{formik.errors.comment}</FormErrorMessage>
               </FormControl>
               <Button type="submit" colorScheme="purple" width="full">
-                {language === "DE" ? "Einreichen" : "Submit"}
+                {language === "ES" ? "Enviar" : language === "DE" ? "Einreichen" : "Submit"}
               </Button>
             </VStack>
           </form>

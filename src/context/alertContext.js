@@ -13,8 +13,13 @@ export const AlertProvider = ({ children }) => {
   });
 
   const [language, setLanguage ] = useState("EN");
+
   const toggleLanguage = () => {
-    setLanguage((prev) => (prev === "EN" ? "DE" : "EN"));
+    setLanguage((prev) => {
+      if (prev === "EN") return "ES";
+      if (prev === "ES") return "DE";
+      return "EN";
+    });
   };
 
   const [colorMode, setColorMode] = useState(false);

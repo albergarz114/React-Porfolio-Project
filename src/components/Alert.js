@@ -13,6 +13,7 @@ import { useRef } from "react";
  */
 function Alert() {
   const { isOpen, type, message, onClose } = useAlertContext();
+  
   const cancelRef = useRef();
   const isSuccess = type === "success"
 

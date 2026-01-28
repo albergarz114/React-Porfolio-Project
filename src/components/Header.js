@@ -41,6 +41,7 @@ const Header = () => {
   const headerRef = useRef(null); 
   const { colorMode, toggleColorMode } = useColorMode();
   const { language, toggleLanguage } = useAlertContext();
+  
 
   useEffect(() => { 
     let prevScrollPos = window.scrollY; 
@@ -119,9 +120,11 @@ const Header = () => {
               spacing={2} 
               cursor="pointer"
               _hover={{ opacity: 0.8 }}
+              
               >
                 <FontAwesomeIcon icon={faLanguage} size="lg"/>
                 <Box fontWeight="bold" fontSize="sm">{language}</Box>
+                
               </HStack>
             </HStack>
           </nav>
@@ -129,9 +132,9 @@ const Header = () => {
             <HStack spacing={8}>
               {/* Add links to Projects and Contact me section */}
               <a href="#projects" onClick={handleClick("projects")}
-              >{language === "DE" ? "Projekte" : "Projects"}</a>
+              >{language === "ES" ? "Proyectos" : language === "DE" ? "Projekte" : "Projects"}</a>
               <a href="#contactme" onClick={handleClick("contactme")}
-              >{language === "DE" ? "Kontaktieren Sie mich" : "Contact Me"}</a>
+              >{language === "ES" ? "Póngase en contacto conmigo" : language === "DE" ? "Kontaktieren Sie mich" : "Contact Me"}</a>
             </HStack>
           </nav>
         </HStack>

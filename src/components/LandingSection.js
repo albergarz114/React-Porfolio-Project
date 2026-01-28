@@ -9,9 +9,9 @@ const LandingSection = () => {
 
   const { language } = useAlertContext();
 
-  const greeting = language === "DE" ? "Hallo, Ich bin Alberto!" : "Hello, I am Alberto!";
-  const bio1 = language === "DE" ? "Full-Stack Entwickler" : "A Full-Stack developer";
-  const bio2 = language === "DE" ? "Spezialisiert auf React, React Native und Python Backend" : "specialised in React, React Native, & Python Backend";
+  const greeting = language === "ES" ? "¡Hola, soy Alberto!" : language === "DE" ? "Hallo, Ich bin Alberto!" : "Hello, I am Alberto!";
+  const bio1 = language === "ES" ? "Programador informático" : language === "DE" ? "Full-Stack Entwickler" : "A Full-Stack developer";
+  const bio2 = language === "ES" ? "especializado en React, React Native, Python-Backend" : language === "DE" ? "Spezialisiert auf React, React Native und Python Backend" : "specialised in React, React Native, & Python Backend";
 
   return (
   <FullScreenSection
