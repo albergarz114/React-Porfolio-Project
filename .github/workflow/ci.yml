@@ -22,3 +22,5 @@ jobs:
         # Use 'docker compose' instead of 'docker-compose'
         docker compose build backend
         docker compose run --rm backend python manage.py test api
+        
+        docker compose -f path/to/your/docker-compose.yml build backend
