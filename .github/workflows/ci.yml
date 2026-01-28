@@ -1,0 +1,25 @@
+name: Django CI
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+
+    - name: Build and Run Tests
+      run: |
+        # We use docker-compose to build the backend image
+        docker-compose build backend
+        # We run the tests just like you did locally
+        docker-compose run --rm backend python manage.py test api

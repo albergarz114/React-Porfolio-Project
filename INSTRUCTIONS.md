@@ -9,6 +9,8 @@
 2. npm install @chakra-ui/react @emotion/react @emotion/styled framer-motion
 3. http://127.0.0.1:8000/api/confirms/ (server side)
 
+## UNIT Tests (backend)
+1. docker-compose exec backend python manage.py test api 
 
 # DOCKER 
 1. docker-compose up --build 

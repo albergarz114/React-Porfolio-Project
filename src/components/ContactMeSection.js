@@ -91,6 +91,8 @@ const LandingSection = () => {
                 {...formik.getFieldProps('type')}
                 >
                   <option value="hireMe">{language === "DE" ? "Freiberuflicher Projektvorschlag" : "Freelance project proposal"}</option>
+                  <option value="fullTime">{language === "DE" ? "Vollzeit" : "Full-Time"}</option>
+                  <option value="partTime">{language === "DE" ? "Teilzeit" : "Part-Time"}</option>
                   <option value="openSource">
                     {language === "DE" ? "Beratungssitzung zu Open Source" : "Open source consultancy session"}
                   </option>
