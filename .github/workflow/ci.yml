@@ -19,6 +19,7 @@ jobs:
 
     - name: Build and Run Tests
       run: |
-        # Use 'docker compose' instead of 'docker-compose'
-        docker compose build backend
-        docker compose run --rm backend python manage.py test api
+        # We use docker-compose to build the backend image
+        docker-compose build backend
+        # We run the tests just like you did locally
+        docker-compose run --rm backend python manage.py test api
