@@ -20,11 +20,11 @@ const projects = [
     url: "https://github.com/albergarz114/Shopfy-list",
   },
   {
-    title: "Photo Gallery: GlisthrallPhoto",
+    title: "SkillSprout Education App",
     description:
-      "This project is a photo collage application which a user can upload, download, save, or delete a photo.",
+      "This mobile app is displays educational games for children ages 5 to 10. The app has mathematics, logical sequence games, and many more!",
     getImageSrc: () => require("../images/photo3.jpg"),
-    url: "https://github.com/albergarz114/GlisthrallPhoto-app",
+    url: "https://github.com/albergarz114/SkillSprout-Education-App",
   },
   {
     title: "World News App",
