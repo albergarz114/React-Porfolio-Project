@@ -19,8 +19,7 @@ jobs:
 
     - name: Build and Run Tests
       run: |
-        # Use 'docker compose' instead of 'docker-compose'
+        # This builds the image using your docker-compose.yml in the root
         docker compose build backend
+        # This runs the tests and then cleans up the container (--rm)
         docker compose run --rm backend python manage.py test api
-        
-        docker compose -f path/to/your/docker-compose.yml build backend
